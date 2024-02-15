@@ -33,12 +33,12 @@ public class TaskService {
     public Optional<Task> updateTask(Long id, Task taskDetails) {
         try {
             return taskRepository.findById(id).map(task -> {
-                task.setTaskName(taskDetails.getTaskName());
-                task.setTaskStart(taskDetails.getTaskStart());
-                task.setTaskDeadline(taskDetails.getTaskDeadline());
-                task.setTaskPriority(taskDetails.getTaskPriority());
-                task.setTaskStatus(taskDetails.getTaskStatus());
-                task.setTaskNote(taskDetails.getTaskNote());
+                task.setName(taskDetails.getName());
+                task.setStart(taskDetails.getStart());
+                task.setDeadline(taskDetails.getDeadline());
+                task.setPriority(taskDetails.getPriority());
+                task.setStatus(taskDetails.getStatus());
+                task.setNote(taskDetails.getNote());
                 return taskRepository.save(task);
             });
         } catch (Exception e) {

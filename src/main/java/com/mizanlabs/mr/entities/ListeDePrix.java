@@ -34,7 +34,7 @@ public class ListeDePrix {
     private BigDecimal price;
 
     @Column(name = "item_type", length = 255)
-    private String itemType;
+    private String type;
 
     @Column(name = "unit", length = 255)
     private String unit;

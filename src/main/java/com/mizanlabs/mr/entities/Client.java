@@ -3,8 +3,9 @@ package com.mizanlabs.mr.entities;
 import jakarta.persistence.*;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-                @getters
-                @setters
+import lombok.Data;
+
+@Data
                 @Entity
                 @Table(name = "clients")
                 public class Client {
@@ -30,12 +31,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
                     @Column(name = "note")
                     private String note;
                     @OneToMany(mappedBy = "clients")
-                    private Set<Projects> Projects;
+                    private Set<Project> Projects;
 
                     // getters and setters are omitted for brevity
-                    @JsonIgnoreProperties("clients")
                     @ManyToMany(mappedBy = "clients")
-                    @JsonIgnoreProperties("clients")
+                    @JsonIgnoreProperties({"clients", "clients"})
 
                     private Set<Contact> contacts;
 

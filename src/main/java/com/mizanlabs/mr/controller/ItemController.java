@@ -1,7 +1,7 @@
 package com.mizanlabs.mr.controller;
 
 import com.mizanlabs.mr.entities.Item;
-import com.mizanlabs.mr.service.ItemService;
+import com.mizanlabs.mr.service.listeprixService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +12,10 @@ import java.util.List;
 @RequestMapping("/api/items")
 public class ItemController {
 
-    private final ItemService itemService;
+    private final listeprixService itemService;
 
     @Autowired
-    public ItemController(ItemService itemService) {
+    public ItemController(listeprixService itemService) {
         this.itemService = itemService;
     }
 

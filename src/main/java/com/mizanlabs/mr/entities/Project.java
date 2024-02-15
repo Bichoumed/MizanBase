@@ -2,8 +2,9 @@ package com.mizanlabs.mr.entities;
 import java.util.Date;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Table;
 import lombok.Data;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Data
 @Entity

@@ -6,8 +6,9 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
 
-
+@Getter
 @Data
 @Entity
 @Table(name = "devis")
@@ -34,4 +35,7 @@ public class Devis {
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
+
+
+
 }

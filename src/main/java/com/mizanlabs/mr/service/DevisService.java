@@ -40,12 +40,12 @@ public class DevisService {
 	    // Renamed from updateContact and changed return type to Optional<Contact> to match the controller
 	    public Optional<Devis> updateDevis(Long id, Devis devisDetails) {
 	        return devisRepository.findById(id).map(devis -> {
-	        	devis.setDevis_date(devisDetails.getDevis_date());
-	        	devis.setDevis_amount(devisDetails.getDevis_amount());
-	        	devis.setDevis_discount(devisDetails.getDevis_discount());
-	        	devis.setDevis_status(devisDetails.getDevis_status());
-	        	devis.setDevis_note(devisDetails.getDevis_note());
-	        	devis.setProjects(devisDetails.getProjects());
+	        	devis.setDevisId(devisDetails.getDate().getTime());
+	        	devis.setAmount(devisDetails.getAmount());
+	        	devis.setDiscount(devisDetails.getDiscount());
+	        	devis.setStatus(devisDetails.getStatus());
+	        	devis.setDevisId(devisDetails.getDevisId());
+	        	devis.setProject(devisDetails.getProject());
 
 
 
