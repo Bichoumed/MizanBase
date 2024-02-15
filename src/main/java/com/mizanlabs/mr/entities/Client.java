@@ -30,11 +30,12 @@ import lombok.Data;
 
                     @Column(name = "note")
                     private String note;
-                    @OneToMany(mappedBy = "clients")
-                    private Set<Project> Projects;
+    @OneToMany(mappedBy = "client")
+    private Set<Project> Projects;
 
-                    // getters and setters are omitted for brevity
-                    @ManyToMany(mappedBy = "clients")
+
+    // getters and setters are omitted for brevity
+                    @ManyToMany()
                     @JsonIgnoreProperties({"clients", "clients"})
 
                     private Set<Contact> contacts;
