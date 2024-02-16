@@ -60,7 +60,6 @@ public class ProjectController {
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
