@@ -2,71 +2,57 @@ package com.mizanlabs.mr.entities;
 
 
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "contacts_clients")
 public class ContactsClients {
 
-	 @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne
-    @MapsId("contactId")
-    @JoinColumn(name = "contact_id")
+    @JoinColumn(name = "contact_id") // Utilisez @JoinColumn pour mapper la relation
     private Contact contact;
 
     @ManyToOne
-    @MapsId("clientId")
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "client_id") // Utilisez @JoinColumn pour mapper la relation
     private Client client;
 
     @Column(name = "is_principal")
     private Boolean isPrincipal;
 
-	public Long getId() {
-		return id;
-	}
+    // Getters et setters
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Contact getContact() {
-		return contact;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setContact(Contact contact) {
-		this.contact = contact;
-	}
+    public Contact getContact() {
+        return contact;
+    }
 
-	public Client getClient() {
-		return client;
-	}
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
 
-	public void setClient(Client client) {
-		this.client = client;
-	}
+    public Client getClient() {
+        return client;
+    }
 
-	public Boolean getIsPrincipal() {
-		return isPrincipal;
-	}
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
-	public void setIsPrincipal(Boolean isPrincipal) {
-		this.isPrincipal = isPrincipal;
-	}
+    public Boolean getIsPrincipal() {
+        return isPrincipal;
+    }
 
-	public ContactsClients(Long id, Contact contact, Client client, Boolean isPrincipal) {
-		super();
-		this.id = id;
-		this.contact = contact;
-		this.client = client;
-		this.isPrincipal = isPrincipal;
-	}
-
-	public ContactsClients() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
+    public void setIsPrincipal(Boolean isPrincipal) {
+        this.isPrincipal = isPrincipal;
+    }
 
 }

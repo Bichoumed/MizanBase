@@ -30,8 +30,9 @@ import lombok.Data;
 
                     @Column(name = "note")
                     private String note;
-    @OneToMany(mappedBy = "client")
-    private Set<Project> Projects;
+
+                    @OneToMany(mappedBy = "client")
+                    private Set<Project> Projects;
 
 
     // getters and setters are omitted for brevity
