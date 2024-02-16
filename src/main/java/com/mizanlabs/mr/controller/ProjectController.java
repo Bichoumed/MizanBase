@@ -24,9 +24,12 @@ public class ProjectController {
     @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 
     @PostMapping
-    public ResponseEntity<Project> createProject(@RequestBody Project project, @RequestParam Long clientId) {
-        if (clientId != null) {
-            clientService.getClientById(clientId).ifPresent(project::setClient);
+    public ResponseEntity<Project> createProject(@RequestBody Project project) {
+        // Check if the project has a client with an ID
+        if (project.getClient() != null && project.getClient().getId() != null) {
+            // If so, fetch the client by ID and set it to the project
+            clientService.getClientById(project.getClient().getId())
+                    .ifPresent(project::setClient);
         }
         Project savedProject = ProjectService.createProject(project);
         return ResponseEntity.ok(savedProject);

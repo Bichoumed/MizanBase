@@ -1,14 +1,10 @@
 package com.mizanlabs.mr.entities;
 import jakarta.persistence.*;
-
 import java.util.Date;
 import java.util.Set;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.Getter;
 
-@Getter
 @Data
 @Entity
 @Table(name = "devis")
@@ -37,6 +33,6 @@ public class Devis {
     private Project project;
 
 
-@OneToMany
-    private Set<ligneDevis> ligneDevis;
+    @OneToMany(mappedBy = "devis", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<LigneDevis> ligneDevis;
 }
