@@ -39,7 +39,7 @@ public class Project {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @ManyToOne
-    @JoinColumn(name = "task_id")
-    private Task task;
+    @OneToMany
+    @JoinColumn(name = "id_task")
+    private Set<Task> task;
 }

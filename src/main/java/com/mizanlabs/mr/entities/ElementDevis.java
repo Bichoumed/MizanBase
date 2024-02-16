@@ -1,17 +1,11 @@
 package com.mizanlabs.mr.entities;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "element_devis")
@@ -38,6 +32,9 @@ public class ElementDevis {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "task_id")
     private Task task;
+    @ManyToOne
+    @JoinColumn(name = "liste_de_prix_id") // This column should exist in your `element_devis` table.
+    private ListeDePrix listeDePrix;
 
     // Additional relationships and methods can be added here as needed
 }
