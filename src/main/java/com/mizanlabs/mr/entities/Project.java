@@ -15,7 +15,7 @@ public class Project {
     private Long projectId;
 
     @Column(name = "date_de_creation")
-    private Date creationDate;
+    private String creationDate;
 
     @Column(length = 255)
     private String name;
@@ -38,4 +38,8 @@ public class Project {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
+    @ManyToOne
+    @JoinColumn(name = "task_id")
+    private Task task;
 }
