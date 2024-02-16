@@ -29,6 +29,10 @@ public class ProjectService {
         return ProjectRepository.findById(id);
     }
 
+    public Project save(Project project) {
+        return ProjectRepository.save(project);
+    }
+
    public  Project createProject(Project Project) {
         return ProjectRepository.save(Project);
     }
@@ -54,6 +58,13 @@ public class ProjectService {
         ProjectRepository.deleteById(id);
         return true;
     }
-
+    public boolean deleteProject(Long id) {
+        boolean exists = ProjectRepository.existsById(id);
+        if (!exists) {
+            return false;
+        }
+        ProjectRepository.deleteById(id);
+        return true;
+    }
 
 }
