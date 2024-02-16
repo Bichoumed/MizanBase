@@ -1,4 +1,4 @@
-package com.mizanlabs.mr.service;
+ package com.mizanlabs.mr.service;
 
 import com.mizanlabs.mr.entities.Client;
 import com.mizanlabs.mr.entities.Contact;

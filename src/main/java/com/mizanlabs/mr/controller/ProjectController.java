@@ -1,7 +1,7 @@
 package com.mizanlabs.mr.controller;
 import com.mizanlabs.mr.entities.Project;
 import com.mizanlabs.mr.service.ProjectService;
-;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
