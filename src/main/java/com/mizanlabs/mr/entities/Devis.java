@@ -37,6 +37,6 @@ public class Devis {
     private Project project;
 
 
-@OneToMany(mappedBy = "Devis")
+@OneToMany
     private Set<ligneDevis> ligneDevis;
 }
